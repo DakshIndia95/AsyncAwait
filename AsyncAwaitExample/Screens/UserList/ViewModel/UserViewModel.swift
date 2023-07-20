@@ -30,4 +30,15 @@ class UserViewModel {
             }
         }
     }
+    
+    @MainActor func fetchUserListWithAsyncAwait(){
+        Task { // @MainActor in(for calling it on main thread) // if you dont want to write async to a function
+            do {
+                let userResponseArray : [UserModel] = try await apiManager.fetchUsersAsyncAwait(url: userUrl)
+                userModel = userResponseArray
+            }catch {
+                print(error)
+            }
+        }
+    }
 }

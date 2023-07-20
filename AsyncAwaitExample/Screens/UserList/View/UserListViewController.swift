@@ -26,7 +26,7 @@ class UserListViewController: UIViewController {
     }
     func initViewModel(){
         viewModel.delegate = self
-        viewModel.fetchUserList()
+        viewModel.fetchUserListWithAsyncAwait()
     }
 }
 

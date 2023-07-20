@@ -17,13 +17,14 @@ enum ApiError : Error{
 typealias Handler<T> = (Result<T,ApiError>) -> Void
 
 class ApiHandler {
+    //MARK: call api with normal approach
     func fetchUsers<T: Decodable>(url:String,type: T.Type,completion: @escaping Handler<T>){
         guard let url = URL(string: url) else {
             completion(.failure(.invalidUrl))
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, err in
-            guard err == nil else {
+            guard let data,err == nil else {
                 completion(.failure(.invalidData))
                 return
             }
@@ -31,13 +32,8 @@ class ApiHandler {
                 completion(.failure(.invalidResponse))
                 return
             }
-            guard let data else {
-                completion(.failure(.invalidData))
-                return
-            }
             do {
                 let userResponse = try JSONDecoder().decode(type, from: data)
-                print("User Response: \(userResponse)")
                 DispatchQueue.main.async {
                     completion(.success(userResponse))
                 }
@@ -46,5 +42,17 @@ class ApiHandler {
             }
         }
         task.resume()
+    }
+    
+    //MARK: Call api with async await appraoch
+    func fetchUsersAsyncAwait<T:Decodable>(url:String) async throws -> T {
+        guard let url = URL(string: url) else {
+            throw ApiError.invalidUrl
+        }
+        let (data,response) = try await URLSession.shared.data(from: url)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw ApiError.invalidResponse
+        }
+        return try JSONDecoder().decode(T.self, from: data)
     }
 }
