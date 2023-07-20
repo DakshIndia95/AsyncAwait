@@ -19,7 +19,7 @@ class UserViewModel {
     }
     weak var delegate : UserServices?
     private var apiManager = ApiHandler()
-    
+    let jsonHelper = JSONHelper()
     func fetchUserList(){
         apiManager.fetchUsers(url: userUrl, type: [UserModel].self) { result in
             switch result {
@@ -39,6 +39,12 @@ class UserViewModel {
             }catch {
                 print(error)
             }
+        }
+    }
+    
+    func fetchUserFromJson(){
+        if let userResponseArray = jsonHelper.loadJsonDataFromFile(){
+            userModel = userResponseArray
         }
     }
 }

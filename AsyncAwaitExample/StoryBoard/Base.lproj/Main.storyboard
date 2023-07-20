@@ -29,32 +29,6 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xEp-Fp-l2E" id="IXk-yu-dA4">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ica-Iv-wQ7">
-                                                            <rect key="frame" x="4" y="4" width="382" height="57"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDm-xQ-Gke">
-                                                                    <rect key="frame" x="4" y="4" width="374" height="49"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                                                    <color key="textColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <constraints>
-                                                                <constraint firstItem="NDm-xQ-Gke" firstAttribute="top" secondItem="ica-Iv-wQ7" secondAttribute="top" constant="4" id="9fJ-dA-ING"/>
-                                                                <constraint firstAttribute="bottom" secondItem="NDm-xQ-Gke" secondAttribute="bottom" constant="4" id="Pjd-NV-fzZ"/>
-                                                                <constraint firstItem="NDm-xQ-Gke" firstAttribute="leading" secondItem="ica-Iv-wQ7" secondAttribute="leading" constant="4" id="WpW-tz-EO9"/>
-                                                                <constraint firstAttribute="trailing" secondItem="NDm-xQ-Gke" secondAttribute="trailing" constant="4" id="muk-c8-SMW"/>
-                                                            </constraints>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="ica-Iv-wQ7" firstAttribute="top" secondItem="IXk-yu-dA4" secondAttribute="top" constant="4" id="ArK-ck-FCg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ica-Iv-wQ7" secondAttribute="bottom" constant="4" id="KR9-FB-g9E"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ica-Iv-wQ7" secondAttribute="trailing" constant="4" id="nYz-3D-DqI"/>
-                                                        <constraint firstItem="ica-Iv-wQ7" firstAttribute="leading" secondItem="IXk-yu-dA4" secondAttribute="leading" constant="4" id="wHQ-Vd-e4V"/>
-                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
